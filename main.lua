@@ -1,16 +1,23 @@
 -- Main
-local time = require("libraries/time")
-local ui_manager = require("libraries/UI/ui-manager")
-local sound_manager = require("sounds/sound-manager")
+local Time = require("libraries/time")
+local UI = require("libraries/UI/init")
+local Sounds = require("sounds/init")
+local Sprites = require("sprites/init")
 
 function love.load()
-
+    UI.load()
+    Sounds.load()
+    Sprites.load()
 end
 
 function love.update(dt)
-
+    Time.update(dt)
+    UI.update(dt)
+    Sounds.update(dt)
+    Sprites.update(dt)
 end
 
 function love.draw()
-    love.graphics.print("Test message", 0, 0)
+    UI.draw()
+    Sprites.draw()
 end
