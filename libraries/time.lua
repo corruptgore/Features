@@ -13,6 +13,14 @@ function GetGameTime()
     return string.format("%02d:%02d:%02d", hours, minutes, seconds)
 end
 
+function time:GetTimeScale()
+    return timeScale
+end
+
+function time:SetTimeScale(Scale)
+    timeScale = Scale
+end
+
 function time.load()
 
 end
@@ -22,7 +30,8 @@ function time.update(dt)
 end
 
 function time.draw()
-    love.graphics.print(GetGameTime(), 0, 0)
+    love.graphics.setDefaultFilter("nearest", "nearest")
+    love.graphics.print(GetGameTime(), love.graphics.getWidth() / 2, love.graphics.getHeight() / 2)
 end
 
 return time
