@@ -12,5 +12,5 @@ function love.update(dt)
 end
 
 function love.draw()
-
+    love.graphics.print("Test message", 0, 0)
 end
